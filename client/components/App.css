@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'sofia-light';
+  src: url('../assets/sofiapro-light.woff2') format('woff2'),
+       url('../assets/sofiapro-light.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'league-spartan';
+  src: url('../assets/leaguespartan.woff2') format('woff2'),
+       url('../assets/leaguespartan.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
+#particles {
+  z-index: -5;
+  position: fixed;
+}
+
+#test {
+  z-index: 5;
+  color: red;
+  border: 1px solid white;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.middle {
+  width: 500px;
+  height: 500px;
+  z-index: 10;
+  color: white;
+  font-family: 'league-spartan';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header {
+  background-color: grey;
+  padding: 8px;
+
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 0.2;
+  padding: 10px;
+  padding-top: 15px;
+}
+
+
+
