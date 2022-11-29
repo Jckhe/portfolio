@@ -66,12 +66,12 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
                       ]
                   },
                   "opacity": {
-                      "value": 0.35,
+                      "value": 0.75,
                       "random": true,
                       "anim": {
                           "enable": true,
                           "speed": 0.115,
-                          "opacity_min": 0.1,
+                          "opacity_min": 0.3,
                           "sync": true
                       }
                   },

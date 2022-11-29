@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "./client/index.tsx",
+  "homepage": "http://Jckhe.github.io/portfolio",
   "scripts": {
     "start": "nodemon ./server/server.js",
     "dev": "concurrently \"webpack-dev-server --mode development --open --hot \" \"nodemon ./server/server.js\"",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
