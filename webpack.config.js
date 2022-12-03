@@ -48,8 +48,8 @@ module.exports = {
   },
   devServer: {
     static: {
-      publicPath: '/dist',
-      directory: path.resolve(__dirname, 'dist')
+      publicPath: '/build',
+      directory: path.resolve(__dirname, 'build')
     },
     proxy: {
       '/api': 'http://localhost:3000',

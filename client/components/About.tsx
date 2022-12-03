@@ -40,6 +40,7 @@ const About = React.forwardRef((_props, ref) => {
   return (
     <div id="about-section" className="aboutContainer">
       <div ref={ref as React.RefObject<HTMLDivElement>} id="aboutScrollPointer">"hi"</div>
+      <div className="aboutMePicContainer"><img src={selfieIcon1} className="aboutMePic" /></div>
       <Typography className="aboutHeader">About Me</Typography>
       <Interests />
       <div className="techStackContainer">

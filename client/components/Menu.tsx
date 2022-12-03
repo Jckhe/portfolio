@@ -62,7 +62,7 @@ const Menu = React.forwardRef(
   return (
     <div className="menuContainer">
       <div className="about">
-        <div className="selfie"></div>
+        <div className="menuPicContainer"><img src={selfieIcon2} className="menuPic" /></div>
         <h1><span id="headerText">Welcome To My Site!</span></h1>
         <p><span style={{fontFamily: 'sofia-light'}} id="headerText">Please choose one the following below: </span></p>
       </div>

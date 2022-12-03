@@ -41,6 +41,11 @@
   }
 
 
+  .projectContainer {
+    height: 1150px!important;
+  }
+
+
 }
 
 
@@ -192,9 +197,19 @@ body {
 }
 
 .contactContainer {
-  margin-top: 125px;
-  height: 800px;
-  border: 1px solid yellow;
+  margin-top: 300px;
+  background:rgba(20, 20, 20, 0.9);
+  height: 250px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  margin-bottom: 120px;
+  width: 520px;
+  color: #9FA6F3;
+  font-family: 'sofia-light';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
 }
 
 .nameLogo {
@@ -390,12 +405,16 @@ body {
     rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
     rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
     rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
-    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+    rgba(0, 0, 0, 0.0) 0px 20px 30px 0px;
 
   filter: drop-shadow(0 0 1rem #777286);
 }
 #carouselItemsInner:hover {
     transform: perspective(800px) rotateY(-4deg);
+  }
+
+  #QuellID:hover {
+    transform: perspective(800px) rotateY(-10deg);
   }
 
 
@@ -414,6 +433,16 @@ body {
 
   #QuellID {
     transform: scale(-1 1);
+    transform:
+    perspective(800px)
+    rotateY(-10deg);
+  transition: transform 0.3s linear 0s;
+  border-radius: 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0) 0px 20px 30px 0px;
   }
 
   .tabsContainerInner {
@@ -426,12 +455,128 @@ body {
 
 
   .demoTechStack {
-    border: 1px solid white;
-    width: 150px;
-    height: 120px;
+    border: 1px solid rgba(119, 114, 134, .5);
+    width: 500px;
+    padding: 10px;
+    height: 200px;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     align-self: center;
-    top: 0;
-    visibility: hidden;
+    margin-top: 40px;
+    background-color: rgba(119, 114, 134, .5);
+    border-radius: 3px;
+  box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0) 0px 20px 30px 0px;
+  }
+
+  
+
+  .demoTechStackInnerContainer {
+    width: 400px;
+    align-items: center;
+    height: 150px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    flex-wrap: wrap!important;
+  }
+
+  .demoTechStackItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    width: 33%;
+    font-family: 'sofia-light';
+    color: white;
+  }
+
+  #linkedIn, #github, #email {
+    color: white;
+    filter: invert(75%) sepia(9%) saturate(5912%) hue-rotate(194deg) brightness(100%) contrast(91%);
+  }
+
+ 
+  .contactItem:hover {
+    color: white;
+  }
+
+
+
+  .contactItem {
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    align-items: center;
+    gap: 5px;
+    text-decoration: underline;
+  }
+
+  .contactInnerContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .aboutMePicContainer {
+    height: 140px;
+    width: 140px;
+    overflow: hidden;
     position: absolute;
+    display: flex;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .9);
+    bottom: -200px;
+    border: 1px solid white;
+  }
+
+  .aboutMePic {
+    min-height: 150%;
+    bottom: 50px;
+    right: 20px;
+    min-width: 120%;
+    position: relative;
+    border: 1px solid red;
+    margin: 0;
+    opacity: 0.33;
+    
+  }
+
+
+  .menuPicContainer {
+    height: 140px;
+    background-color: rgba(0, 0, 0, .9);
+    width: 140px;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    top: 65px;
+    cursor: pointer;
+    border: 1px solid white;
+  }
+
+  .menuPic {
+    min-height: 175%;
+    bottom: 50px;
+    right: 30px;
+    min-width: 135%;
+    position: relative;
+    border: 1px solid red;
+    margin: 0;
+    opacity: 0.33;
+  }
+
+  .menuPic:hover {
+    opacity: 0.85;
+  }
+
+  .aboutMePic:hover {
+    opacity: 0.85;
   }
