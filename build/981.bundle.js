@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknftpal=self.webpackChunknftpal||[]).push([[981],{981:(e,t,n)=>{n.r(t),n.d(t,{default:()=>r});var a=n(294),s=n(893);const r=a.forwardRef((function(e,t){return(0,s.jsx)("div",{ref:t,id:"about-section",className:"aboutContainer",children:(0,s.jsx)("span",{style:{color:"white"},children:"About Deez"})})}))}}]);

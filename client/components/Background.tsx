@@ -2,6 +2,11 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
+import reactIcon from '../assets/reactjs-icon.svg'
+import pythonIcon from '../assets/pythonLogo.svg'
+import graphQLIcon from '../assets/graphql_logo.svg'
+import typescriptIcon from '../assets/typescriptLogo.svg';
+
 
 
 export function Background() {
@@ -44,22 +49,22 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
                       "type": "images",
                       "images": [
                         {
-                          "src": "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg",
+                          "src": reactIcon,
                           "height": 100,
                           "width": 100
                         },
                         {
-                          "src": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+                          "src": pythonIcon,
                           "height": 130,
                           "width": 130
                         },
                         {
-                          "src": "https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg",
+                          "src": graphQLIcon,
                           "height": 100,
                           "width": 100
                         },
                         {
-                          "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+                          "src": typescriptIcon,
                           "height": 100,
                           "width": 100
                         }

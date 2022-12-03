@@ -14,6 +14,41 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'walkway';
+  src: url('../assets/Walkway_Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/* for big 27 in screens */
+@media (min-width: 1820px) and (max-width: 2599px) {
+  .menuContainer {
+    margin-top: 500px!important;
+    width: 600px!important;
+    height: 350px!important;
+  }
+
+  .aboutContainer {
+    margin-top: 65vh!important;
+  }
+
+  .demoImg {
+    height: 660px!important;
+    width: 520px!important;
+  }
+
+
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 #particles {
@@ -28,25 +63,35 @@
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  margin: 0;
 }
+
 .main {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
 }
 
-.middle {
+.menuContainer {
+  margin-top: 250px;
   width: 500px;
-  height: 500px;
+  height: 300px;
+  background:rgba(20, 20, 20, 0.85);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 2.5px;
   z-index: 10;
   color: white;
-  font-family: 'league-spartan';
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.menuContainer:hover {
+  border: 1px solid rgb(119, 114, 134);
 }
 
 #header {
@@ -58,11 +103,335 @@ body {
 .about {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   line-height: 0.2;
   padding: 10px;
   padding-top: 15px;
 }
 
+#buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#buttonHeading {
+  font-family: "sofia-light";
+  background-color: rgba(0,0,0,.6);
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+#headerText {
+
+  padding: 2px;
+  color: rgb(218, 218, 215);
+  -webkit-text-stroke: 1px solid #000000;
+  text-rendering: optimizeLegibility;
+  font-family: 'sofia-light';
+  filter: drop-shadow(0 0 0.75rem #777286);
+}
 
 
+
+#scrollUpContainer {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: 15px;
+  right: 0;
+  margin-right: 20px;
+  height: 40px;
+  background-color: rgb(119, 114, 134);
+  width: 40px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+#scrollUpContainer:hover {
+  background-color: #ada8bb;
+  transition: all 0.15s linear;
+}
+
+#scrollUpContainer:active {
+  background-color: #b7b7b7;
+  transition: all 0.15s linear;
+}
+
+
+.aboutContainer {
+  height: 550px;
+  width: 600px;
+  margin-top: 55vh;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  align-items: center;
+  background:rgba(20, 20, 20, 0.9);
+  border: 1px solid rgba(255, 255, 255, .3);
+}
+
+.projectContainer {
+  margin-top: 125px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  height: 1000px;
+  width: 950px;
+  background:rgba(20, 20, 20, 0.9);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.contactContainer {
+  margin-top: 125px;
+  height: 800px;
+  border: 1px solid yellow;
+}
+
+.nameLogo {
+  height: 100px;
+  width: 100px;
+  filter: grayscale(100)
+}
+
+.aboutHeader {
+  font-family: 'sofia-light'!important;
+  color: white;
+}
+
+.techStackItem {
+  color: white;
+  font-family: 'sofia-light'!important;
+  padding: 6.5px 12.5px;
+  width: 100%;
+  font-size: 1rem!important;
+  align-items: center;
+  height: 20px;
+  background-color: rgba(119, 114, 134, .5);
+  border: 1px solid rgb(98, 97, 97);
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.techItemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.techStackContainer {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  height: 260px;
+  padding: 15px;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.techStackWrapper {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 200px;
+  gap: 20px;
+  /* border: 1px solid red; */
+  align-content: space-evenly;
+  
+}
+
+#aboutScrollPointer {
+  visibility: hidden;
+  position: absolute;
+  bottom: -120px;
+}
+
+
+#pythonLogo {
+  width: 25px!important;
+  margin-right: 5px;
+}
+
+.techLogo {
+  height: 30px;
+  width: 30px;;
+}
+
+.techItemWrapper {
+
+}
+
+#interestsContainer {
+  color: white!important;
+  font-family: 'sofia-light'!important;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+  padding: 15px;
+  background-color: rgba(119, 114, 134, .5);
+}
+
+.interestsText {
+  display: flex;
+  flex-direction: column;
+  line-height: 15px;
+  align-items: center;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.typingInterests {
+  text-decoration: underline!important;
+  color: #9fa6f3;
+}
+
+
+
+#typingContainer {
+  font-size: .8rem;
+}
+
+.techdivider {
+  background-color: white!important;
+  color: white!important;
+  z-index: 555;
+}
+
+.carouselContainer {
+  margin-top: 0px;
+  width: 95%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.carouselItemsContainer {
+ 
+  width: 75%;
+  height: 95%;
+  overflow: hidden;
+}
+
+.inner {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  height: 100%;
+}
+
+.carouselItems {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.carouselInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;;
+}
+
+.demoImg {
+  height: 550px;
+  width: 420px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+#demoimgContainer {
+  overflow: hidden!important;
+  filter:drop-shadow(1px 2px 5px black);
+}
+
+
+
+#overlay:hover {
+  /* background: linear-gradient(0deg, rgba(71, 71, 71, 0), rgba(14, 14, 14, 0) 80%) no-repeat; */
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in;
+}
+
+.carouselItemName {
+  font-family: 'sofia-light';
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#carouselItemsInner {
+  transform:
+    perspective(800px)
+    rotateY(-7deg);
+  transition: transform 1s ease 0s;
+  border-radius: 5px;
+  box-shadow:
+    rgba(0, 0, 0, 0.024) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px,
+    rgba(0, 0, 0, 0.03) 0px 0px 8px 0px,
+    rgba(0, 0, 0, 0.1) 0px 20px 30px 0px;
+
+  filter: drop-shadow(0 0 1rem #777286);
+}
+#carouselItemsInner:hover {
+    transform: perspective(800px) rotateY(-4deg);
+  }
+
+
+
+
+  .tabsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 50px;
+  }
+
+  #QuellID {
+    transform: scale(-1 1);
+  }
+
+  .tabsContainerInner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+  }
+
+
+  .demoTechStack {
+    border: 1px solid white;
+    width: 150px;
+    height: 120px;
+    z-index: 10;
+    align-self: center;
+    top: 0;
+    visibility: hidden;
+    position: absolute;
+  }
