@@ -21,6 +21,71 @@
   font-style: normal;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 3) {
+  .menuContainer {
+    width: 400px!important;
+  }
+
+  .menuButton {
+    max-height: 60px!important;
+    max-width: 100px!important;
+    min-width: 100px!important;
+    padding: 5px!important;
+  }
+
+  #buttonHeading {
+    background-color: rgba(0,0,0,.1)!important;
+  }
+
+  .aboutMePicContainer {
+    bottom: -45px!important;
+  }
+
+  .aboutContainer {
+    height: 700px!important;
+  }
+  
+
+  .interestsText {
+    max-width: 275px;
+    line-height: 15px!important;
+  }
+
+  .techStackContainer {
+    max-width: 80%!important;
+    
+  }
+
+  .techItemWrapper {
+    gap: 5px!important;
+  }
+
+
+  .techStackWrapper {
+    min-width: 50%!important;
+    height: 350px!important;
+  }
+
+  .carouselButton {
+    z-index: 7;
+    position: absolute!important;
+    border: 1px solid white;
+    
+  }
+
+  .demoImgContainer {
+    z-index: 4;
+  }
+
+  .caroulseButtonContainer {
+    position: relative!important;
+    z-index: 6;
+    border: 1px solid red!important;
+  }
+ 
+
+  
+}
 
 
 /* for big 27 in screens */

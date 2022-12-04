@@ -108,7 +108,7 @@ const Carousel = ({selection}: CarouselTypes) => {
   if (selection === 'all') {
     return (
       <div className="carouselContainer">
-        <Button disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button>
+        <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button></div>
         <div className="carouselItemsContainer">
           <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
             {(allItems).map((item: Item, index: number) => {
@@ -118,7 +118,7 @@ const Carousel = ({selection}: CarouselTypes) => {
             })}
           </div>
         </div>
-        <Button disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button>
+        <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button></div>
       </div>
     )
   } else if (selection === 'apps') {
