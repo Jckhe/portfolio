@@ -14,12 +14,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'walkway';
-  src: url('../assets/Walkway_Bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 3) {
   .menuContainer {

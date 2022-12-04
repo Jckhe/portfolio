@@ -1,11 +1,9 @@
 import { Button, Container, Link, Theme } from "@mui/material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { solid, regular, brands, icon } from '@fortawesome/fontawesome-svg-core/import.macro'
+import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { makeStyles, createStyles } from '@mui/styles';
-import React, { RefObject, useEffect } from "react";
-import namelogo from '../assets/namelogo.svg'
-import selfieIcon1 from '../assets/github.jpg'
-import selfieIcon2 from '../assets/headshot.png'
+import React, { useEffect } from "react";
+import selfieIcon2 from '../assets/headshot_compressed.jpeg'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
   button: {
@@ -40,23 +38,11 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 }));
 
 
-interface refTypes {
-  aboutSectionRef: () => null | HTMLDivElement,
-  portfolioSectionRef: null | HTMLDivElement,
-  contactSectionRef: null | HTMLDivElement,
-}
-
-
 
 const Menu = React.forwardRef(
   (_prop, {aboutSectionRef, portfolioSectionRef, contactSectionRef}: any) => {
   const classes = useStyles();
   
-  console.log("BEFORE: ", aboutSectionRef, portfolioSectionRef, contactSectionRef)
-
-  useEffect(() => {
-    console.log(aboutSectionRef, portfolioSectionRef, contactSectionRef)
-  })
 
 
   return (

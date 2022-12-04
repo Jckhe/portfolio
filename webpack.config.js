@@ -5,7 +5,8 @@ module.exports = {
   entry:  './client/index.tsx',
   output: {
     path: path.join(__dirname, '/build'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    clean: true
   },
 
   plugins: [

@@ -1,12 +1,11 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Background } from '../components/Background'
 import './App.css'
 import Menu from './Menu'
-import { Projects } from "./Projects";
 import { Contact } from "./Contact";
 const LazyScrollTopButton = React.lazy(() => import('./ScrollTopButton'))
 const LazyAboutSection = React.lazy(() => import('./About'))
-
+const LazyProjects = React.lazy(() => import('./Projects'));
 
 function App() {
   //This is used for onclick events
@@ -15,15 +14,26 @@ function App() {
   const portfolioSectionRef = useRef<HTMLDivElement>(null);
   const contactSectionRef = useRef<HTMLDivElement>(null);
   const ref = {aboutSectionRef: aboutSectionRef, portfolioSectionRef: portfolioSectionRef, contactSectionRef: contactSectionRef}
+  const [visible, setVisible] = useState<boolean>(false);
 
-  console.log("first ref: ", ref)
+
+  const toggleVisibleProjectContainer = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 400){
+      setVisible(true)
+    } 
+  };
+
+  window.addEventListener('scroll', toggleVisibleProjectContainer);
+
+
 
   return (
     <div className="main">
       <Menu ref={ref} />
       <Background />
       <LazyAboutSection ref={aboutSectionRef} />
-      <Projects ref={portfolioSectionRef} />
+      <LazyProjects load={visible} ref={portfolioSectionRef} /> 
       <Contact ref={contactSectionRef} />
       <LazyScrollTopButton />
     </div>

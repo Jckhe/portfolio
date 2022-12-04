@@ -11,7 +11,6 @@ import typescriptIcon from '../assets/typescriptLogo.svg';
 
 export function Background() {
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
 
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -20,7 +19,7 @@ export function Background() {
 }, []);
 
 const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
+    await console.log("LOADED CONTAINER: ", container);
 }, []);
 
 

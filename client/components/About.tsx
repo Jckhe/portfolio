@@ -1,6 +1,5 @@
-import { Divider, List, Typography } from "@mui/material";
-import React from "react";
-import { useRef } from "react";
+import { Divider, Typography } from "@mui/material";
+import React, { useState } from "react";
 import ReactTypingEffect from 'react-typing-effect';
 import reactIcon from '../assets/reactjs-icon.svg'
 import pythonIcon from '../assets/pythonLogo.svg'
@@ -14,21 +13,31 @@ import psqlIcon from '../assets/psqlLogo.svg'
 import mongoIcon from '../assets/mongoIcon.svg'
 import webpackIcon from '../assets/webpacklogo.svg';
 import cssIcon from '../assets/css3Logo.svg';
-import selfieIcon1 from '../assets/github.jpg'
-import selfieIcon2 from '../assets/headshot.png'
-
-
+const LazyLoadSelfImg = React.lazy(() => import('./Selfie'))
 
 
 const About = React.forwardRef((_props, ref) => {
-
-  
+  const [visible, setVisible] = useState<boolean>(false);
   const techStack = ['React', 'Typescript', 'GraphQL', 'Python', 'Javascript', 'Redux + TK', 'HTML5', 'MaterialUI', 'PostgreSQL', 'MongoDB', 'CSS3', 'Webpack' ]
   const techSVG = [reactIcon, typescriptIcon, graphQLIcon, pythonIcon, javascriptIcon, reduxIcon, html5Icon, materialuiIcon, psqlIcon, mongoIcon, cssIcon, webpackIcon]
 
 
 
+  //this function will be checking for the user's scroll behavior
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 50){
+      setVisible(true)
+    } 
+    else if (scrolled <= 50){
+      setVisible(false)
+    }
+  };
 
+  window.addEventListener('scroll', toggleVisible);
+  
+
+  
 
 
 
@@ -40,7 +49,7 @@ const About = React.forwardRef((_props, ref) => {
   return (
     <div id="about-section" className="aboutContainer">
       <div ref={ref as React.RefObject<HTMLDivElement>} id="aboutScrollPointer">"hi"</div>
-      <div className="aboutMePicContainer"><img src={selfieIcon1} className="aboutMePic" /></div>
+      {visible ? <LazyLoadSelfImg visible={visible} /> : ''}
       <Typography className="aboutHeader">About Me</Typography>
       <Interests />
       <div className="techStackContainer">
