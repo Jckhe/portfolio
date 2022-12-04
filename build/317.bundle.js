@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknftpal=self.webpackChunknftpal||[]).push([[317],{5317:a=>{a.exports="data:image/png;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiOTNhM2Y1YjM0NWUxMDk2YjdjZDczMjY5NGVjZTgxNTIucG5nIjs="}}]);

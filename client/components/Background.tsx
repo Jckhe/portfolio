@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 import type { Container, Engine } from "tsparticles-engine";
@@ -10,6 +10,9 @@ import typescriptIcon from '../assets/typescriptLogo.svg';
 
 
 export function Background() {
+  const [animationSwitch, toggleAnimationSwitch] = useState<boolean>(false);
+
+
   const particlesInit = useCallback(async (engine: Engine) => {
 
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets

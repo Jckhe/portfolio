@@ -1,5 +1,5 @@
 import { Divider, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import ReactTypingEffect from 'react-typing-effect';
 import reactIcon from '../assets/reactjs-icon.svg'
 import pythonIcon from '../assets/pythonLogo.svg'
@@ -16,27 +16,23 @@ import cssIcon from '../assets/css3Logo.svg';
 const LazyLoadSelfImg = React.lazy(() => import('./Selfie'))
 
 
+
+
 const About = React.forwardRef((_props, ref) => {
   const [visible, setVisible] = useState<boolean>(false);
   const techStack = ['React', 'Typescript', 'GraphQL', 'Python', 'Javascript', 'Redux + TK', 'HTML5', 'MaterialUI', 'PostgreSQL', 'MongoDB', 'CSS3', 'Webpack' ]
   const techSVG = [reactIcon, typescriptIcon, graphQLIcon, pythonIcon, javascriptIcon, reduxIcon, html5Icon, materialuiIcon, psqlIcon, mongoIcon, cssIcon, webpackIcon]
 
 
-
   //this function will be checking for the user's scroll behavior
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
-    if (scrolled > 50){
+    if (scrolled > 60){
       setVisible(true)
-    } 
-    else if (scrolled <= 50){
-      setVisible(false)
     }
   };
 
   window.addEventListener('scroll', toggleVisible);
-  
-
   
 
 
@@ -49,7 +45,9 @@ const About = React.forwardRef((_props, ref) => {
   return (
     <div id="about-section" className="aboutContainer">
       <div ref={ref as React.RefObject<HTMLDivElement>} id="aboutScrollPointer">"hi"</div>
-      {visible ? <LazyLoadSelfImg visible={visible} /> : ''}
+      <Suspense fallback={<div className="aboutMePicContainer" style={{color: 'white', border: '1px solid white'}}>Loading</div>}>
+        {visible ? <LazyLoadSelfImg /> : ''}
+      </Suspense>
       <Typography className="aboutHeader">About Me</Typography>
       <Interests />
       <div className="techStackContainer">

@@ -44,7 +44,7 @@ const Carousel = ({selection}: CarouselTypes) => {
 
 
   const toolItems: Item[] = [
-    {name: 'Quell', src: quellAppDemo, targetSrc: 'https://github.com/open-source-labs/Quell', techStack: ['graphql', 'node', 'jest', 'redis']}
+    {name: 'Quell (GraphQL Caching Solution)', src: quellAppDemo, targetSrc: 'https://github.com/open-source-labs/Quell', techStack: ['graphql', 'node', 'jest', 'redis']}
   ]
 
   const appItems: Item[] = [
