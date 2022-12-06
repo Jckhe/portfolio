@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { Background } from '../components/Background'
 import './App.css'
 import Menu from './Menu'
@@ -17,14 +17,19 @@ function App() {
   const [visible, setVisible] = useState<boolean>(false);
 
 
-  const toggleVisibleProjectContainer = () => {
+  const toggleVisibleProjectContainer = useCallback(() => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 400){
       setVisible(true)
     } 
-  };
+  }, [])
 
-  window.addEventListener('scroll', toggleVisibleProjectContainer);
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisibleProjectContainer);
+    return () => {
+      window.removeEventListener('scroll', toggleVisibleProjectContainer);
+    }
+  }, [])
 
 
 

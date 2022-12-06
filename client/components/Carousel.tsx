@@ -22,6 +22,7 @@ import quellAppDemo from '../assets/website-screenshots/quellAppLogo.svg';
 
 
 
+
 interface CarouselTypes {
   selection: string
 }
@@ -29,16 +30,39 @@ interface CarouselTypes {
 const Carousel = ({selection}: CarouselTypes) => {
   const [activeIndex, updateIndex] = useState<number>(0);
 
+  //handles the left and right button click, switch cases are better to use than if cases.
+  //apparently switch statements are more efficient under the hood.
   function handleClick(direction: string) {
-    if (direction == 'right') {
-      if (selection === 'all') updateIndex(activeIndex + 1 === allItems.length ? 0 : activeIndex + 1)
-      else if (selection === 'apps') updateIndex(activeIndex + 1 === appItems.length ? 0 : activeIndex + 1)
-      else if (selection === 'tools') updateIndex(activeIndex + 1 === toolItems.length ? 0 : activeIndex + 1)
-    }
-    else {
-      if (selection === 'all') updateIndex((activeIndex - 1) < 0  ? allItems.length - 1 : activeIndex - 1)
-      else if (selection === 'apps') updateIndex((activeIndex - 1) < 0  ? appItems.length - 1 : activeIndex - 1)
-      else if (selection === 'tools') updateIndex((activeIndex - 1) < 0  ? toolItems.length - 1 : activeIndex - 1)
+    switch(direction) {
+      case 'right':
+        switch(selection) {
+          case 'all': 
+            updateIndex(activeIndex + 1 === allItems.length ? 0 : activeIndex + 1);
+            break;
+          case 'apps':
+            updateIndex(activeIndex + 1 === appItems.length ? 0 : activeIndex + 1);
+            break;
+          case 'tools':
+            updateIndex(activeIndex + 1 === toolItems.length ? 0 : activeIndex + 1);
+            break;
+          default:
+            break;
+        }
+        break;
+      case 'left':
+        switch(selection) {
+          case 'all': 
+            updateIndex((activeIndex - 1) < 0  ? allItems.length - 1 : activeIndex - 1)
+            break;
+          case 'apps':
+            updateIndex((activeIndex - 1) < 0  ? appItems.length - 1 : activeIndex - 1)
+            break;
+          case 'tools':
+            updateIndex((activeIndex - 1) < 0  ? toolItems.length - 1 : activeIndex - 1)
+            break;
+          default:
+            break;
+        }
     }
   }
 
@@ -67,9 +91,6 @@ const Carousel = ({selection}: CarouselTypes) => {
     updateIndex(0)
   }, [selection])
 
-  useEffect(() => {
-    console.log("LAZY LOADED CAROUSEL!")
-  }, [])
   
   if (selection === 'all') {
     return (
@@ -196,13 +217,12 @@ const CarouselItem = ({name, src, index, curIndex, targetSrc, techStack}: any) =
             <img id={`${name}ID`}  src={src} className="demoImg"/>
           </div>
         </div>
-
       </div>
       <div className="demoTechStack">
            <List className="demoTechStackInnerContainer">
               {techStack.map((tech: string, index:number) => {
                 let currentTech = techLogos[tech];
-                return <div className="demoTechStackItem"><img src={currentTech.src}  height="30px" width="30px" /><span>{currentTech.name}</span></div>
+                return <div key={index} className="demoTechStackItem"><img src={currentTech.src}  height="30px" width="30px" /><span>{currentTech.name}</span></div>
               })}
            </List>
       </div>
