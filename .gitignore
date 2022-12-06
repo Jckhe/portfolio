@@ -1,5 +1,4 @@
 /node_modules
-/build
 server.csr
 server.key
 server.pass.key
