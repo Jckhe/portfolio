@@ -1,7 +1,8 @@
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, List, Box } from "@mui/material";
-import { useState, useEffect } from "react";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useState, useEffect, memo } from "react";
 import reactLogo from '../assets/react.svg';
 import graphqlLogo from '../assets/graphql_logo.svg';
 import typescriptLogo from '../assets/typescriptLogo.svg';
@@ -29,6 +30,19 @@ interface CarouselTypes {
 
 const Carousel = ({selection}: CarouselTypes) => {
   const [activeIndex, updateIndex] = useState<number>(0);
+  const mobile = useMediaQuery('(max-width: 800px)');
+
+
+
+  const ButtonView = memo(() => {
+    return (
+      <div className="mobileCarouselButtons">
+        <Button className="mobileCarouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button>
+        <Button className="mobileCarouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button>
+      </div>
+    )
+  })
+
 
   //handles the left and right button click, switch cases are better to use than if cases.
   //apparently switch statements are more efficient under the hood.
@@ -95,17 +109,20 @@ const Carousel = ({selection}: CarouselTypes) => {
   if (selection === 'all') {
     return (
       <div className="carouselContainer">
-        <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button></div>
-        <div className="carouselItemsContainer">
-          <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-            {(allItems).map((item: Item, index: number) => {
-              return (
-                <CarouselItem key={index} index={index} techStack={item.techStack} targetSrc={item.targetSrc} curIndex={activeIndex} src={item.src} name={item.name}/>
-              )
-            })}
+        {mobile ? <ButtonView /> : null}
+        <div id="carouselInnerContainer">
+          <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button></div>
+          <div className="carouselItemsContainer">
+            <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+              {(allItems).map((item: Item, index: number) => {
+                return (
+                  <CarouselItem key={index} index={index} techStack={item.techStack} targetSrc={item.targetSrc} curIndex={activeIndex} src={item.src} name={item.name}/>
+                )
+              })}
+            </div>
           </div>
+          <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button></div>
         </div>
-        <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button></div>
       </div>
     )
   } else if (selection === 'apps') {
@@ -229,6 +246,7 @@ const CarouselItem = ({name, src, index, curIndex, targetSrc, techStack}: any) =
     </div>
   )
 }
+
 
 
 export default Carousel;
