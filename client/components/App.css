@@ -25,7 +25,7 @@
 }
 
 
-/* iPADs */
+/* iPADs
 @media only screen and (max-width: 1200px) and (max-width: 1100px) {
   .aboutMePicContainer {
     bottom: 15px!important;
@@ -51,7 +51,7 @@
   .carouselContainer {
     width: 800px!important;
   }
-}
+} */
 
 /* Old Iphones */
 @media only screen and (max-width: 750px) {
@@ -90,7 +90,7 @@
 /* New iPhones */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 3) {
   .menuContainer {
-    width: 400px!important;
+    width: 375px!important;
   }
 
   .menuButton {
@@ -110,6 +110,11 @@
 
   .aboutContainer {
     height: 700px!important;
+    width: 350px!important;
+  }
+
+  .projectContainer {
+    width: 600px!important;
   }
   
 
@@ -122,6 +127,10 @@
     max-width: 80%!important;
     
   }
+
+    .tabsContainer {
+      bottom: 70px!important;
+    }
 
   .techItemWrapper {
     gap: 5px!important;
