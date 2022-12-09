@@ -682,7 +682,7 @@ body {
     display: flex;
     cursor: pointer;
     background-color: rgba(0, 0, 0, .9);
-    bottom: -200px;
+    bottom: -150px;
     border: 1px solid white;
   }
 
