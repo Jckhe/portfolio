@@ -153,11 +153,7 @@
     z-index: 4;
   }
 
-  .caroulseButtonContainer {
-    /* position: relative!important; */
-    z-index: 10;
-    border: 1px solid red!important;
-  }
+
  
 
   .projectContainer {

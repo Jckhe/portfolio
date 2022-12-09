@@ -111,7 +111,7 @@ const Carousel = ({selection}: CarouselTypes) => {
       <div className="carouselContainer">
         {mobile ? <ButtonView /> : null}
         <div id="carouselInnerContainer">
-          <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button></div>
+          {!mobile ? <Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button> : null}
           <div className="carouselItemsContainer">
             <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
               {(allItems).map((item: Item, index: number) => {
@@ -121,56 +121,65 @@ const Carousel = ({selection}: CarouselTypes) => {
               })}
             </div>
           </div>
-          <div className="caroulseButtonContainer"><Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button></div>
+          {!mobile ? <Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button> : null}
         </div>
       </div>
     )
   } else if (selection === 'apps') {
     return (
       <div className="carouselContainer">
-        <Button onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button>
-        <div className="carouselItemsContainer">
-          <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-            {appItems.map((item: Item, index: number) => {
-              return (
-                  <CarouselItem key={index} techStack={item.techStack} targetSrc={item.targetSrc} index={index} curIndex={activeIndex} src={item.src} name={item.name}/>
-              )
-            })}
+        {mobile ? <ButtonView /> : null}
+        <div id="carouselInnerContainer">
+          {!mobile ? <Button onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button> : null}
+          <div className="carouselItemsContainer">
+            <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+              {appItems.map((item: Item, index: number) => {
+                return (
+                    <CarouselItem key={index} techStack={item.techStack} targetSrc={item.targetSrc} index={index} curIndex={activeIndex} src={item.src} name={item.name}/>
+                )
+              })}
+            </div>
           </div>
-        </div>
-        <Button onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button>
+          {!mobile ? <Button onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button> : null}
+          </div>
       </div>
     )
   } else if (selection === 'tools') {
     return (
       <div className="carouselContainer">
-        <Button onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button>
-        <div className="carouselItemsContainer">
-          <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-            {toolItems.map((item:Item, index:number) => {
-              return (
-                  <CarouselItem techStack={item.techStack} key={index} targetSrc={item.targetSrc} index={index} curIndex={activeIndex} src={item.src} name={item.name}/>
-              )
-            })}
+        {mobile ? <ButtonView /> : null}
+        <div id="carouselInnerContainer">
+          {!mobile ? <Button onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button> : null}
+          <div className="carouselItemsContainer">
+            <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+              {toolItems.map((item:Item, index:number) => {
+                return (
+                    <CarouselItem techStack={item.techStack} key={index} targetSrc={item.targetSrc} index={index} curIndex={activeIndex} src={item.src} name={item.name}/>
+                )
+              })}
+            </div>
           </div>
+          {!mobile ? <Button onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button> : null}
         </div>
-        <Button onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button>
       </div>
     )
   } else {
     return (
       <div className="carouselContainer">
-        <Button onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button>
-        <div className="carouselItemsContainer">
-          <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-            {(allItems).map((item: Item, index: number) => {
-              return (
-                <CarouselItem techStack={item.techStack} key={index} targetSrc={item.targetSrc} index={index} curIndex={activeIndex} src={item.src} name={item.name}/>
-              )
-            })}
+        {mobile ? <ButtonView /> : null}
+        <div id="carouselInnerContainer">
+          {!mobile ? <Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('left')}}><FontAwesomeIcon  size="3x" icon={solid("left-long")}/></Button> : null}
+          <div className="carouselItemsContainer">
+            <div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+              {(allItems).map((item: Item, index: number) => {
+                return (
+                  <CarouselItem key={index} index={index} techStack={item.techStack} targetSrc={item.targetSrc} curIndex={activeIndex} src={item.src} name={item.name}/>
+                )
+              })}
+            </div>
           </div>
+          {!mobile ? <Button className="carouselButton" disableRipple={true} onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button> : null}
         </div>
-        <Button onClick={() => {handleClick('right')}}><FontAwesomeIcon  size="3x" icon={solid("right-long")}/></Button>
       </div>
     )
   }
