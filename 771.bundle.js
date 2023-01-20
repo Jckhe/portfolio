@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknftpal=self.webpackChunknftpal||[]).push([[771],{9771:(e,a,s)=>{s.r(a),s.d(a,{default:()=>t});const c=s.p+"1fbd61e16181b5ab6f707978e1b5e33e.jpg";var n=s(5893);const t=function(){return(0,n.jsx)("div",{className:"aboutMePicContainer",children:(0,n.jsx)("img",{src:c,className:"aboutMePic"})})}}}]);
