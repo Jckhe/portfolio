@@ -9,6 +9,9 @@ import typescriptLogo from '../assets/typescriptLogo.svg';
 import reduxLogo from '../assets/redux.svg';
 import javascriptLogo from '../assets/jsLogo.svg';
 import webpackLogo from '../assets/webpacklogo.svg';
+import pythonLogo from '../assets/pythonLogo.svg';
+import flaskLogo from '../assets/flaskLogo.svg';
+import expoLogo from '../assets/expoLogo.svg';
 import nodeLogo from '../assets/nodejsLogo.svg';
 import redisLogo from '../assets/redis-icon.svg';
 import cssLogo from '../assets/css3Logo.svg';
@@ -19,6 +22,8 @@ import quellDemo from '../assets/website-screenshots/quellDemo.jpeg';
 import playboardsDemo from '../assets/website-screenshots/playboards.png';
 import nftpalDemo from '../assets/website-screenshots/nftpalSS.png';
 import quellAppDemo from '../assets/website-screenshots/quellAppLogo.svg';
+import taskAIDemo from '../assets/website-screenshots/taskAI.png';
+
 
 
 
@@ -86,6 +91,7 @@ const Carousel = ({selection}: CarouselTypes) => {
   ]
 
   const appItems: Item[] = [
+    {name: 'tasksAI', src: taskAIDemo, targetSrc: 'http://www.taskai.io', techStack: ['reactnative', 'graphql', 'expo', 'python', 'javascript', 'redux', 'flask' ]},
     {name: 'Quell Demo', src: quellDemo, targetSrc: 'http://www.quellql.com/', techStack: ['react', 'graphql', 'typescript', 'materialui', 'redis', 'html', 'css', 'webpack' ]},
     {name: 'PlayBoards', src: playboardsDemo, targetSrc: 'https://github.com/Jckhe/playBoards-ts', techStack: ['react', 'redux', 'graphql', 'typescript', 'node', 'webpack', 'html', 'css' ]},
     {name: 'NFTPal', src: nftpalDemo, targetSrc: 'https://jckhe.github.io/NFTPal-Deployed/', techStack: ['react', 'redux', 'javascript', 'html', 'css' ]},
@@ -201,7 +207,11 @@ const CarouselItem = ({name, src, index, curIndex, targetSrc, techStack}: any) =
     html: {name: 'HTML5', src: htmlLogo},
     redis: {name: 'Redis', src: redisLogo},
     redux: {name: 'Redux + TK', src: reduxLogo},
-    jest: {name: 'Jest', src: jestLogo}
+    jest: {name: 'Jest', src: jestLogo},
+    reactnative: {name: 'React Native', src: reactLogo},
+    python: {name: 'Python', src: pythonLogo},
+    expo: {name: 'Expo', src: expoLogo},
+    flask: {name: 'Flask', src: flaskLogo}
   } 
 
   
@@ -219,7 +229,10 @@ const CarouselItem = ({name, src, index, curIndex, targetSrc, techStack}: any) =
     redux: TechType,
     html: TechType,
     css: TechType,
-
+    reactnative: TechType,
+    python: TechType,
+    flask: TechType,
+    expo: TechType
   }
 
 
