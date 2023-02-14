@@ -681,9 +681,22 @@ body {
     position: absolute;
     display: flex;
     cursor: pointer;
+    bottom: -150px;
+    border: 1px solid white;
+    transition: all 0.2s linear;
+  }
+
+  .aboutMePicContainerLarge {
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    cursor: pointer;
     background-color: rgba(0, 0, 0, .9);
     bottom: -150px;
     border: 1px solid white;
+    transition: all 0.2s linear;
   }
 
   .aboutMePic {
@@ -700,24 +713,56 @@ body {
 
 
   .menuPicContainer {
-    height: 140px;
+    height: 150px;
     background-color: rgba(0, 0, 0, .9);
-    width: 140px;
+    width: 150px;
     overflow: hidden;
     position: absolute;
     display: flex;
     top: 65px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     cursor: pointer;
+    opacity: 0.66;
     border: 1px solid white;
+    transition: all 0.2s linear;
   }
 
+  .menuPicContainerLarge {
+    height: 200px;
+    background-color: rgba(0, 0, 0, .9);
+    width: 200px;
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    top: 42.5px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0.66;
+    border: 1px solid white;
+    transition: all 0.2s linear;
+  }
+
+  .menuPicContainer:hover {
+    opacity: 1;
+  }
+
+  .menuPicContainerLarge:hover {
+    opacity: 1;
+  }
+
+
   .menuPic {
-    min-height: 175%;
+    /* object-fit: fill;
     bottom: 50px;
     right: 30px;
-    min-width: 135%;
-    position: relative;
-    border: 1px solid red;
+    aspect-ratio: 1/1; */
+    /* position: relative; */
+    aspect-ratio: 1;
+    /* width: 100%; */
     margin: 0;
     opacity: 0.33;
   }

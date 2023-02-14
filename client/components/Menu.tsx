@@ -2,7 +2,7 @@ import { Button, Container, Link, Theme } from "@mui/material";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { makeStyles, createStyles } from '@mui/styles';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import selfieIcon2 from '../assets/headshot_compressed.jpeg'
 
 const useStyles = makeStyles((theme: Theme) => createStyles({
@@ -42,13 +42,14 @@ const useStyles = makeStyles((theme: Theme) => createStyles({
 const Menu = React.forwardRef(
   (_prop, {aboutSectionRef, portfolioSectionRef, contactSectionRef}: any) => {
   const classes = useStyles();
+  const [largePic, enlargePic] = useState(false);
   
 
 
   return (
     <div className="menuContainer">
       <div className="about">
-        <div className="menuPicContainer"><img src={selfieIcon2} className="menuPic" /></div>
+        <div className={largePic ? 'menuPicContainerLarge' : 'menuPicContainer'} style={{backgroundImage: `url(${selfieIcon2})`}} onClick={() => enlargePic(!largePic)}></div>
         <h1><span id="headerText">Welcome To My Site!</span></h1>
         <p><span style={{fontFamily: 'sofia-light'}} id="headerText">Please choose one of the following below: </span></p>
       </div>
