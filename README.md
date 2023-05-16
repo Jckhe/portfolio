@@ -1,5 +1,5 @@
 ## My Portfolio Site
-Deployed on [www.jckhe.com](www.jckhe.com)
+Deployed [here](http://www.jckhe.com)
 
 App was deployed using heroku, backend serves static files.
 <br />
